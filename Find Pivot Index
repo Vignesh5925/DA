@@ -1,0 +1,19 @@
+int pivotIndex(int* nums, int numsSize){
+    int i = numsSize - 1, l = 0, r = 0;
+    while(i >= 0)
+    {
+        r += nums[i];
+        i--;
+    }
+    while(i < numsSize - 1)
+    {
+        i++;
+        r -= nums[i];
+        if(l == r)
+        {
+            return i;
+        }
+        l += nums[i];
+    }
+    return -1;
+}
